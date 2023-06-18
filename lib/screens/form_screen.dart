@@ -64,12 +64,12 @@ class _FormScreenState extends State<FormScreen> {
                         .hasMatch(val)) {
                       return '잘못된 이메일 형식입니다.';
                     }
-
                     return null;
                   },
                 ),
                 renderTextFormField(
                   label: '비밀번호',
+                  isObscureText: true,
                   onSaved: (val) {
                     setState(() {
                       password = val;
@@ -185,6 +185,7 @@ class _FormScreenState extends State<FormScreen> {
     required String label,
     required FormFieldSetter onSaved,
     required FormFieldValidator validator,
+    bool isObscureText = false,
   }) {
     return Card(
       child: Padding(
@@ -203,6 +204,8 @@ class _FormScreenState extends State<FormScreen> {
               ],
             ),
             TextFormField(
+              autovalidateMode: AutovalidateMode.always,
+              obscureText: isObscureText,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
                 hintText: 'Enter a search term',

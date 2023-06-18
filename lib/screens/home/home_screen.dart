@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_factory/screens/form_screen.dart';
+import 'package:flutter_factory/screens/layout.dart';
 import '../../layouts/listview_layout.dart';
 import '../../models/listview_item.dart';
 import '../../screens/row_and_column.dart';
@@ -19,6 +20,10 @@ class _HomeScreenState extends State<HomeScreen> {
         ListViewItem(
           name: 'Row & Column',
           page: const RowAndColumnScreen(),
+        ),
+        ListViewItem(
+          name: 'Layout',
+          page: const Layout(),
         ),
         ListViewItem(
           name: 'Form Input',
